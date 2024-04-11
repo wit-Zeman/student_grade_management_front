@@ -9,58 +9,58 @@
       </el-header>
 
       <el-container class="main-container">
-
         <el-aside width="200px" class="aside">
-          <el-menu>
-            <el-menu-item index="0">
+<!--          要在el-menu中加上router属性，才能实现点击菜单项跳转页面-->
+          <el-menu router>
+            <el-menu-item index="/home">
               <el-icon>
                 <IconMenu/>
               </el-icon>
               <template #title>首页</template>
             </el-menu-item>
-            <el-menu-item index="1">
+            <el-menu-item index="/course">
               <el-icon>
                 <setting/>
               </el-icon>
               <template #title>课程管理</template>
             </el-menu-item>
-            <el-menu-item index="2">
+            <el-menu-item index="/grade">
               <el-icon>
                 <setting/>
               </el-icon>
               <template #title>成绩管理</template>
             </el-menu-item>
-            <el-menu-item index="3">
+            <el-menu-item index="/teacher">
               <el-icon>
                 <setting/>
               </el-icon>
               <template #title>教师管理</template>
             </el-menu-item>
-            <el-menu-item index="4">
+            <el-menu-item index="/student">
               <el-icon>
                 <setting/>
               </el-icon>
               <template #title>学生管理</template>
             </el-menu-item>
-            <el-menu-item index="4">
+            <el-menu-item index="/class">
               <el-icon>
                 <setting/>
               </el-icon>
               <template #title>班级管理</template>
             </el-menu-item>
-            <el-menu-item index="4">
+            <el-menu-item index="/user">
               <el-icon>
                 <setting/>
               </el-icon>
               <template #title>用户管理</template>
             </el-menu-item>
-            <el-menu-item index="4">
+            <el-menu-item index="/personage">
               <el-icon>
                 <setting/>
               </el-icon>
               <template #title>个人中心</template>
             </el-menu-item>
-            <el-menu-item index="4">
+            <el-menu-item index="msgBoard">
               <el-icon>
                 <setting/>
               </el-icon>
@@ -70,29 +70,19 @@
         </el-aside>
 
         <el-main class="main">
-          <div class="main-content">
-            <div class="welcome-message">
-              当前北京时间为：{{ date.toLocaleString() }}——欢迎{{ userInfo.username }}访问
-            </div>
-          </div>
+          <router-view></router-view>
         </el-main>
       </el-container>
       <el-footer class="footer">© 2024 SGMS. All rights reserved.</el-footer>
     </div>
   </div>
-</template>
+  </template>
 
 <script lang="ts" setup>
 
-import {ref} from 'vue'
 import {Menu as IconMenu, Setting} from '@element-plus/icons-vue'
 import {useRouter} from 'vue-router'
-import { ElMessage } from 'element-plus'
-
-// 读取本地存储中的用户信息
-const userInfo = ref(JSON.parse(localStorage.getItem('userInfo')));
-
-const date = ref(new Date());
+import {ElMessage} from 'element-plus'
 
 const router = useRouter();
 // 退出登录
@@ -101,7 +91,7 @@ const logout = () => {
   // 删除本地存储中的用户信息
   localStorage.removeItem('userInfo');
   // 跳转到登录页面
-  router.push('/login')
+  router.push('/')
 }
 </script>
 
@@ -148,26 +138,7 @@ const logout = () => {
   padding: 0; /* 清除内边距 */
 }
 
-.main-content {
-  position: relative; /* 设置相对定位 */
-  width: 100%; /* 图片宽度100% */
-  height: 100%; /* 图片高度100% */
-  background-image: url("/src/assets/images/home.jpg"); /* 设置背景图片路径 */
-  background-size: cover; /* 让背景图片完全覆盖容器 */
-  background-position: center; /* 图片居中显示 */
-}
 
-.welcome-message {
-  position: absolute; /* 设置绝对定位 */
-  top: 50%; /* 顶部距离为容器高度的50% */
-  left: 50%; /* 左侧距离为容器宽度的50% */
-  transform: translate(-50%, -100%); /* 居中定位 */
-  color: #daad0d; /* 文字颜色为白色 */
-  text-align: center; /* 文字居中上 */
-  font-size: 18px; /* 文字大小 */
-  font-weight: bold; /* 文字加粗 */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 添加文字阴影效果 */
-}
 
 
 .header {

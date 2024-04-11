@@ -30,7 +30,7 @@
 <script>
 
 import { ElMessage } from 'element-plus'
-import {userRegisterService,userLoginService} from '@/api/user.js'
+import {userRegisterService,userLoginService} from '@/api/User.js'
 import router from '@/router/router'
 
 
@@ -85,7 +85,7 @@ export default {
                 // 使用浏览器的本地存储将用户信息存储到本地
                 localStorage.setItem('userInfo', JSON.stringify(res.data))
                 // 跳转到首页 借助路由完成跳转
-                router.push('/')
+                router.push('/home')
               } else {
                 ElMessage.error('登录失败')
               }
