@@ -159,10 +159,10 @@ const logout = () => {
 }
 
 .main {
-  background-color: #E0E0E0;
+  background-color: #ffffff;
   color: #333;
-  font-family: 'Pacifico', cursive;
-  font-size: 16px;
+  font-family: "Arial";
+  font-size: 14px;
   flex: 1; /* 使main自动填充剩余空间 */
 }
 
