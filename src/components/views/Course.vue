@@ -80,7 +80,7 @@
         </el-form>
         <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">取消</el-button>
-        <el-button type="primary" @click="updateCourse">确认</el-button>
+        <el-button type="primary" @click=" title == '更新课程' ? updateCourse() : insertCourse()">确认</el-button>
       </span>
       </el-dialog>
     </el-card>
