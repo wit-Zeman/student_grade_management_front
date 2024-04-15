@@ -1,4 +1,5 @@
 <template>
+  <br>
   <div class="demo-date-picker">
     <span>姓名:</span>
     <el-input v-model="name" style="margin-right: 10px; flex: 1;" placeholder="请输入学生姓名"/>
@@ -26,8 +27,8 @@
     <el-table :data="tableData" style="width: 100%">
       <el-table-column prop="id" label="序号" width="150"/>
       <el-table-column prop="studentName" label="姓名" width="150"/>
-      <el-table-column prop="courseName" label="科目" width="150"/>
-      <el-table-column prop="type" label="考试类型" width="150"/>
+      <el-table-column prop="courseName" label="科目" width="250"/>
+      <el-table-column prop="type" label="考试类型" width="200"/>
       <el-table-column prop="score" label="考试分数" width="150"/>
       <el-table-column prop="time" label="考试时间" width="150"/>
     </el-table>
@@ -36,7 +37,7 @@
   <div class="pagination-container">
     <div class="pagination-content">
       <!-- 你的分页控件代码 -->
-      <el-pagination background layout="prev, pager, next" :total="1000" small v-model="page" @currentChange="pageChange" page-size="10"/>
+      <el-pagination background layout="prev, pager, next" :total="1000"  v-model="page" @currentChange="pageChange" page-size="10"/>
     </div>
   </div>
 </template>
