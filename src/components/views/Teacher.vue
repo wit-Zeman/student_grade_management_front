@@ -79,7 +79,7 @@
   <div class="pagination-container">
     <div class="pagination-content">
       <!-- 你的分页控件代码 -->
-      <el-pagination background layout="prev, pager, next" :total="1000" v-model="page"
+      <el-pagination background layout="prev, pager, next" :total="100" v-model="page"
                      @currentChange="pageChange" page-size="10"/>
     </div>
   </div>
