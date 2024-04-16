@@ -42,12 +42,6 @@
               </el-icon>
               <template #title>学生管理</template>
             </el-menu-item>
-            <el-menu-item index="/class">
-              <el-icon>
-                <setting/>
-              </el-icon>
-              <template #title>班级管理</template>
-            </el-menu-item>
             <el-menu-item index="/user">
               <el-icon>
                 <setting/>

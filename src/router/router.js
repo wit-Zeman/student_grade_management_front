@@ -4,7 +4,6 @@ import {createRouter, createWebHistory} from 'vue-router'
 // 导入vue组件
 import Login from '@/components/views/Login.vue'
 import Layout from '@/components/views/Layout.vue'
-import Class from '@/components/views/Class.vue'
 import Course from '@/components/views/Course.vue'
 import Grade from '@/components/views/Grade.vue'
 import MsgBoard from '@/components/views/MsgBoard.vue'
@@ -24,7 +23,6 @@ const routes = [
         // 子路由
         children: [
             {path: '/home', component: Home},
-            {path: '/class', component: Class},
             {path: '/course', component: Course},
             {path: '/grade', component: Grade},
             {path: '/msgBoard', component: MsgBoard},
