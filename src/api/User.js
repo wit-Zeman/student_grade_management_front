@@ -24,8 +24,8 @@ export const getUserInfoByIdService = (id) => {
 };
 
 // 根据ID修改用户信息
-export const updateUserInfoByIdService = (id) => {
-    return request.put("/user/", +id)
+export const updateUserInfoByIdService = (id, user) => {
+    return request.put("/user/" + id, user)
 };
 
 // 根据ID删除用户信息
@@ -39,6 +39,15 @@ export const getUserListService = (page, pageSize) => {
         params: {
             page: page,
             pageIndex: pageSize
+        }
+    })
+};
+
+// 用户上传头像
+export const uploadAvatarService = (data) => {
+    return request.post("/user/upload", data, {
+        headers: {
+            'Content-Type': 'multipart/form-data'
         }
     })
 };

@@ -3,7 +3,7 @@
     <div class="full-height">
       <el-header class="header">
         <div class="header-content">
-          <span class="sgms">SGMS</span>
+          <span class="sgms">学生成绩管理系统</span>
           <el-button type="warning" class="exit-btn" @click="logout">退出</el-button>
         </div>
       </el-header>
@@ -41,12 +41,6 @@
                 <setting/>
               </el-icon>
               <template #title>学生管理</template>
-            </el-menu-item>
-            <el-menu-item index="/user">
-              <el-icon>
-                <setting/>
-              </el-icon>
-              <template #title>用户管理</template>
             </el-menu-item>
             <el-menu-item index="/personage">
               <el-icon>
